@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,Params  } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
-    this.returnUrl = this.activeRouter.snapshot.queryParams.returnUrl || '/';
+    const queryParams: Params = this.activeRouter.snapshot.queryParams;
+    this.returnUrl = queryParams['returnUrl'] || '/';
   }
 
   get fc() {
