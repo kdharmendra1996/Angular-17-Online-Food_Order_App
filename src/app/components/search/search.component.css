@@ -1,0 +1,32 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+div input{
+    border-radius: 10rem 0 0 10rem;
+    outline: 0;
+    border: 0;
+    width: 20rem;
+    height: 3rem;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #f1f1f1;
+    color: red;
+}
+div button{
+    border-radius: 0 10rem 10rem 0;
+    color:white;
+    background-color: red;
+    border: 0;
+    outline: 0;
+    width: 7rem;
+    font-size: 1em;
+
+}
+div button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}

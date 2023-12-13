@@ -1,0 +1,13 @@
+<header class="">
+    <div class="right"><a href="#" class="logo" routerLink="/">Food Hub</a></div>
+    <nav class="left">
+        <span><a href="#" routerLink="/">Profile</a></span>
+        <span><a href="#" routerLink="/login"><span class="bi bi-person-fill fs-3"></span></a></span>
+        <span><a href="#" routerLink="/cart-page" class="btn  position-relative">
+            <i class="bi bi-cart4 fs-3"></i>
+            <span *ngIf="cartQuantity" class=" cart start-100  bg-dark text-white border border-light rounded-circle"
+            >{{cartQuantity}}</span>
+        </a></span>
+       
+    </nav>
+</header>

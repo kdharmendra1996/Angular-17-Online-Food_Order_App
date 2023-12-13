@@ -1,0 +1,42 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-page-not-found [visibleMessage]="!dataCart || dataCart.Cartitems.length <=0"
+notFoundMessage="Item Not Found !"
+resetLinkText="Go TO Homepage !"
+></app-page-not-found>
+<div class="container mt-4" *ngIf="dataCart && dataCart.Cartitems.length>0">
+    <ul>
+        <li *ngFor="let cartItem of dataCart.Cartitems">
+            <div>
+                <img [src]="cartItem.foods.imageUrl" [alt]="cartItem.foods.name" />
+            </div>
+            <div class="price">
+                <a href="#" routerLink="/food/{{cartItem.foods.id}}">
+                    {{cartItem.foods.name}}
+                </a>
+            </div>
+            <div>
+                <select  #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+            <div>
+                <button class="remove-btn" (click)="removeCarBtn(cartItem)"><span class="bi bi-trash-fill"></span></button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout">
+       <div>
+        <div class="coutn-cart">{{dataCart.totalCount}}</div>
+        <div class="count-price"><span class="text-success">&nbsp;<strong>{{dataCart.totalPrice}}</strong></span></div>
+       </div>
+       <br><br>
+        <a rounterLink="/chackout-page" >Proceed to Checkout</a>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.right{
+    border: 1px solid whitesmoke;
+    display: flex;
+    border-radius: 10%;
+    
+}
+.left h1{
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.favorite{
+    float:left;
+    margin-right: 1em;
+}
+ngb-rating{
+    color: red;
+    font-size: 1.5em;
+}
+small{
+    font-size: 1em;
+    color: gray;
+}
+
+.icons span{
+    color: red;
+    font-size: .9em;
+}
+.icons{
+    font-size: .8em;
+    margin-top: 5px;
+    flex: 3;
+    font-weight: 600;
+   text-align: left;
+    color: rgb(19, 18, 18);
+}
+.BtnCart{
+    margin-top: 1em;
+}
+.BtnCart button{
+    width: 200px;
+    height: 50px;
+    margin-left: 1em;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    color: white;
+    font-weight: 600;
+}
+.price{
+    font-weight: 600;
+    font-size: 1em;
+    color: black;
+}
+.price span{
+    color: green;
+}

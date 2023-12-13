@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    
+    <app-search></app-search>
+    <br>
+    <app-tags-page class="container"></app-tags-page>
+    <br>
+    <app-page-not-found
+    [visibleMessage]="!food || food.length <=0" resetLinkText="Reset search"></app-page-not-found>
+    <br>
+    <br>
+    <ul>
+        <li *ngFor="let item of food">
+            <a href="#" routerLink="/food-page/{{item.id}}">
+                <img [src]="item.imageUrl" alt="food-img" />
+                <div class="content">
+                    <h6>{{item.name}}</h6>
+                    <p class="favorite">
+                        <span class="{{item.favorite ? 'bi bi-heart-fill text-danger' : 'bi bi-heart-fill  text-dark'}}"></span>
+                    </p>
+                    <ngb-rating [max]="5" [rate]="item.star" [readonly]="true"></ngb-rating>
+                    <div class="item-footer">
+                        <div class="origin">
+                            <span *ngFor="let origin of item.origins" >
+                                {{origin}}
+                            </span>
+                        </div>
+                        <p class="icons">
+                            <span class="bi bi-clock"></span> {{item.cookTime}}
+                        </p>
+                    </div>
+                    <h5><span>{{item.price | currency}}</span></h5>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

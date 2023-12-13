@@ -1,0 +1,19 @@
+div{
+    display: flex;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+}
+div a{
+    border: 1px solid red;
+    color: red;
+    margin-left: 1em;
+    border-radius: 5px;
+    padding: .4em;
+    font-size:.8em;
+    font-weight: 500;
+}
+div a:hover{
+    background-color: red;
+    color:white;
+    border: 1px solid gray;
+}

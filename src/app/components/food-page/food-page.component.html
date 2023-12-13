@@ -1,0 +1,38 @@
+<app-page-not-found [visibleMessage]="!food" resetLinkText="Go  To Back" notFoundMessage="Food Not Found Please try again..!">
+
+</app-page-not-found>
+<div class="container mt-4" *ngIf="food">
+    <div class="d-flex">
+        <div class="p-4 right">
+            <img src="{{food.imageUrl}}" alt="" height="300" width="300">
+        </div>
+        <div class="p-4 left">
+            <div class="d-flex"> 
+                <p class="favorite">
+                    <span class="{{food.favorite ? 'bi bi-heart-fill text-danger' : 'bi bi-heart-fill  text-dark'}}"></span>
+                </p>
+                <h1><strong>{{food.name}}</strong></h1>
+            </div>
+            <ngb-rating [max]="5" [rate]="food.star" [readonly]="true"></ngb-rating><br>
+            <div>
+                <app-tags-page [FoodPageTag]="food.tag"></app-tags-page>
+            </div>
+            <div class="mt-1">
+                <small>{{food.origins}}</small>
+                <p class="icons">
+                    Time to cook about 
+                    <span class="bi bi-clock"></span> <strong> {{food.cookTime}}</strong> Minutes
+                </p>
+            </div>
+            <div class="price">
+                Price : <span> {{food.price | currency}}</span>
+            </div>
+            <div class="BtnCart">
+                <button class="btn btn-warning" (click)="AddToCartBtn()">ADD TO CART</button>
+            </div>
+
+        </div>
+    </div>
+    
+
+</div>

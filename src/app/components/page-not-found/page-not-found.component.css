@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 200;
+    flex-direction: column;
+    height: 25vh;
+    font-size: 1.5rem;
+    color: black;
+    align-items: center;
+}
+div a{
+    width: 200px;
+}

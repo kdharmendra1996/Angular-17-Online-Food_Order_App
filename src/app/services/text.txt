@@ -1,0 +1,39 @@
+------Without Backend -----service.ts content
+import { Injectable } from '@angular/core';
+import { Food } from '../shared/food';
+import { Food_Data, Tag_Data } from '../../data';
+import { Tag } from '../shared/tag';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FoodService {
+
+  constructor(private http:HttpClient) { }
+
+  getAll():Food[]{
+    return Food_Data
+  }
+
+  getFoodBySearchTerm(searchTerm:string){
+    return this.getAll().filter(food=>food.name.toLowerCase().
+    includes(searchTerm.toLowerCase()))
+  }
+
+  getAllTags():Tag[]{
+    return Tag_Data
+  }
+
+  getAllFoodByTag(tag:string):Food[]{
+    if(tag=="All"){
+      return this.getAll();
+    }else{
+      return this.getAll().filter(food=>food.tag?.includes(tag))
+    }
+  }
+
+  getFoodById(id:number):Food{
+    return this.getAll().find(food=>food.id == id)!
+  }
+}
